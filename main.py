@@ -69,6 +69,9 @@ class BlogPost(db.Model):
     comments = relationship("Comment", back_populates="post")
 
 
+db.create_all()
+
+
 def is_admin():
     if current_user.is_authenticated:
         return current_user.id == 2
